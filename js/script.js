@@ -3,17 +3,54 @@ document.addEventListener("DOMContentLoaded", function() {
     // LÓGICA PARA O MENU HAMBURGER
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
-    const navLinks = document.querySelectorAll(".nav-link");
-
+    
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
     });
 
-    navLinks.forEach(n => n.addEventListener("click", () => {
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     }));
+
+    // LÓGICA PARA O TEMA CLARO/ESCURO
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    // Função para aplicar o tema e atualizar o ícone
+    const applyTheme = (theme) => {
+        if (theme === 'light') {
+            htmlElement.setAttribute('data-theme', 'light');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Mostra a lua no modo claro
+        } else {
+            htmlElement.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Mostra o sol no modo escuro
+        }
+    };
+
+    // Função para trocar o tema
+    const toggleTheme = () => {
+        const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme); // Salva a escolha do usuário
+        applyTheme(newTheme);
+    };
+    
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // Lógica de inicialização do tema
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+        applyTheme(savedTheme); // Usa o tema salvo se existir
+    } else if (prefersDark) {
+        applyTheme('dark'); // Usa a preferência do sistema se não houver tema salvo
+    } else {
+        applyTheme('light'); // Padrão para o modo claro
+    }
+
 
     // EFEITO DE FADE-IN NAS SEÇÕES AO ROLAR A PÁGINA
     const observer = new IntersectionObserver((entries) => {
@@ -33,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // INICIA E CONFIGURA O PARTICLES.JS
+    // A cor das partículas é neutra (#888888) para funcionar em ambos os temas.
     particlesJS("particles-js", {
       "particles": {
         "number": {
@@ -43,14 +81,10 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         },
         "color": {
-          "value": "#8233FF"
+          "value": "#8233FF" 
         },
         "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
+          "type": "circle"
         },
         "opacity": {
           "value": 0.5,
@@ -64,18 +98,12 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "size": {
           "value": 3,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 40,
-            "size_min": 0.1,
-            "sync": false
-          }
+          "random": true
         },
         "line_linked": {
           "enable": true,
           "distance": 150,
-          "color": "#4a4a4a",
+          "color": "#888888",
           "opacity": 0.2,
           "width": 1
         },
@@ -83,15 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
           "enable": true,
           "speed": 1,
           "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
+          "out_mode": "out"
         }
       },
       "interactivity": {
@@ -102,34 +122,14 @@ document.addEventListener("DOMContentLoaded", function() {
             "mode": "repulse"
           },
           "onclick": {
-            "enable": false,
-            "mode": "push"
+            "enable": false
           },
           "resize": true
         },
         "modes": {
-          "grab": {
-            "distance": 400,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
           "repulse": {
             "distance": 100,
             "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
           }
         }
       },
