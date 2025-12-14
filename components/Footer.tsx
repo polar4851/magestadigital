@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Magestà Digital" className="h-8 w-auto" />
+              <img src="logo.svg" alt="Magestà Digital" className="h-8 w-auto object-contain" />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Elevando o padrão do marketing digital. Design estratégico e gestão de redes sociais para quem quer crescer.

@@ -23,9 +23,13 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <img src="/logo.svg" alt="Magestà Digital" className="h-8 md:h-9 w-auto" />
+        {/* Logo - Caminho relativo para funcionar melhor em subdiretórios */}
+        <a href="#" className="flex items-center gap-2 group">
+          <img 
+            src="logo.svg" 
+            alt="Magestà Digital" 
+            className="h-8 md:h-10 w-auto object-contain" 
+          />
         </a>
 
         {/* Desktop Nav */}
