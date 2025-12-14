@@ -70,17 +70,17 @@ const Testimonials: React.FC = () => {
 
         {/* Seção de Logos dos Clientes */}
         <div className="mt-20 border-t border-slate-900 pt-16">
-          <p className="text-center text-slate-500 text-sm font-semibold uppercase tracking-widest mb-10">
+          <p className="text-center text-slate-500 text-sm font-semibold uppercase tracking-widest mb-12">
             Empresas que confiam na Magestà
           </p>
           
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80">
             {/* Logo 1 */}
             <div className="group transition-all duration-300 hover:scale-105">
               <img 
                 src="logo1.svg" 
                 alt="Cliente Parceiro 1" 
-                className="h-12 md:h-14 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100 object-contain"
+                className="h-16 md:h-20 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100 object-contain"
               />
             </div>
             
@@ -89,7 +89,7 @@ const Testimonials: React.FC = () => {
               <img 
                 src="logo2.svg" 
                 alt="Cliente Parceiro 2" 
-                className="h-12 md:h-14 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100 object-contain"
+                className="h-16 md:h-20 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100 object-contain"
               />
             </div>
 
@@ -98,7 +98,7 @@ const Testimonials: React.FC = () => {
               <img 
                 src="logo3.svg" 
                 alt="Cliente Parceiro 3" 
-                className="h-12 md:h-14 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100 object-contain"
+                className="h-16 md:h-20 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100 object-contain"
               />
             </div>
           </div>
