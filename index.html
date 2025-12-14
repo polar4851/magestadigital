@@ -1,250 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magesta Digital - Marketing que Gera Resultados</title>
-    <meta name="description" content="Transformamos sua presença online em uma máquina de captar clientes. Marketing digital focado em crescimento para o seu negócio.">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magestà Digital | Social Media & Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              brand: {
+                cyan: '#16C8F2',
+                purple: '#8233FF',
+              },
+              slate: {
+                850: '#151e2e',
+                900: '#0f172a',
+                950: '#020617', // Deep background
+              }
+            },
+            backgroundImage: {
+              'gradient-brand': 'linear-gradient(to right, #16C8F2, #8233FF)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { background-color: #020617; overflow-x: hidden; }
+      
+      .text-gradient {
+        background: linear-gradient(to right, #16C8F2, #8233FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+      /* Clean Panel - Performance Optimized (No Blur) */
+      .clean-panel {
+        background: rgba(15, 23, 42, 0.85); /* Slate 900 with opacity */
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      
+      .clean-panel:hover {
+        border-color: rgba(22, 200, 242, 0.3);
+        background: rgba(15, 23, 42, 0.95);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+      }
 
-    <link rel="stylesheet" href="css/style.css">
+      /* Clean Button - Professional look */
+      .btn-primary {
+        background: linear-gradient(to right, #16C8F2, #8233FF);
+        color: white;
+        transition: filter 0.3s ease, transform 0.2s ease;
+      }
 
-    <script src="https://kit.fontawesome.com/c213a85617.js" crossorigin="anonymous"></script>
+      .btn-primary:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(130, 51, 255, 0.3);
+      }
 
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #cbd5e1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline:hover {
+        border-color: #16C8F2;
+        color: #16C8F2;
+        background: rgba(22, 200, 242, 0.05);
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-
-    <div id="particles-js"></div>
-
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="nav-logo">
-                    <img src="logo.svg" alt="Logo Magesta Digital">
-                </a>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#problema" class="nav-link">O Problema</a></li>
-                    <li class="nav-item"><a href="#solucao" class="nav-link">A Solução</a></li>
-                    <li class="nav-item"><a href="#metodo" class="nav-link">Nosso Método</a></li>
-                    <li class="nav-item"><a href="#resultados" class="nav-link">Resultados</a></li>
-                </ul>
-                <a href="https://wa.me/5563992215782" target="_blank" class="btn btn-primary btn-nav">Falar com Especialista</a>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Marketing Digital que Faz seu Negócio <span class="highlight">Decolar</span>.</h1>
-                    <p class="hero-subtitle">Chega de depender da sorte. Criamos um fluxo constante de clientes para você.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <h3>+ de 150</h3>
-                            <p>Clientes Satisfeitos</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>+200%</h3>
-                            <p>Aumento Médio em Vendas</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>3 anos</h3>
-                            <p>de Experiência</p>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/5563992215782" target="_blank" class="btn btn-primary btn-lg">Quero Vender Mais</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="problema" class="problem-section">
-            <div class="container">
-                <h2 class="section-title">Sua empresa enfrenta algum desses <span class="highlight">problemas</span>?</h2>
-                <p class="section-subtitle">Você trabalha duro, tem um serviço de qualidade, mas os clientes não chegam como deveriam.</p>
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <i class="fas fa-users-slash icon"></i>
-                        <h3>Clientes não aparecem</h3>
-                        <p>Você fica esperando indicações que nem sempre vêm e não tem controle sobre seu crescimento.</p>
-                    </div>
-                    <div class="problem-card">
-                        <i class="fab fa-instagram-square icon"></i>
-                        <h3>Redes Sociais Paradas</h3>
-                        <p>Seu Instagram ou Facebook não tem posts, não gera engajamento e seus concorrentes estão na sua frente.</p>
-                    </div>
-                    <div class="problem-card">
-                        <i class="fas fa-dollar-sign icon"></i>
-                        <h3>Dinheiro perdido em anúncios</h3>
-                        <p>Você já tentou impulsionar posts, mas só perdeu dinheiro e não viu nenhum resultado real.</p>
-                    </div>
-                    <div class="problem-card">
-                        <i class="fas fa-clock icon"></i>
-                        <h3>Falta de Tempo</h3>
-                        <p>Entre gerenciar seu negócio e atender clientes, não sobra tempo para pensar em marketing.</p>
-                    </div>
-                    <div class="problem-card">
-                        <i class="fas fa-lightbulb-slash icon"></i>
-                        <h3>Não sabe como atrair</h3>
-                        <p>Você sabe que precisa de marketing digital, mas não tem ideia de por onde começar ou o que fazer.</p>
-                    </div>
-                    <div class="problem-card">
-                        <i class="fas fa-chart-line-down icon"></i>
-                        <h3>Sem controle dos resultados</h3>
-                        <p>Você não sabe quantos clientes vieram do digital e qual foi o retorno real do seu investimento.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="solucao" class="solution-section">
-            <div class="container">
-                 <h2 class="section-title">A solução definitiva para <span class="highlight">transformar</span> seu negócio</h2>
-                 <p class="section-subtitle">O Método Magesta é um processo validado que transforma sua presença online em uma máquina de vendas.</p>
-                 <div class="solution-content">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1484&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pessoa de negócios analisando gráficos">
-                    </div>
-                    <div class="solution-text">
-                        <h3>Chega de achismos. É hora de ter uma estratégia.</h3>
-                        <p>Nós cuidamos de todo o seu marketing para que você possa focar no que faz de melhor: gerenciar sua empresa.</p>
-                        <ul class="solution-list">
-                            <li><i class="fas fa-check-circle"></i> Rebranding completo e profissional das suas redes sociais.</li>
-                            <li><i class="fas fa-check-circle"></i> Anúncios estratégicos no Google e Meta (Facebook/Instagram).</li>
-                            <li><i class="fas fa-check-circle"></i> Criação de conteúdo que atrai, engaja e vende.</li>
-                            <li><i class="fas fa-check-circle"></i> Relatórios transparentes para você acompanhar cada resultado.</li>
-                        </ul>
-                        <a href="https://wa.me/5563992215782" target="_blank" class="btn btn-secondary">Descobrir o Método Magesta</a>
-                    </div>
-                 </div>
-            </div>
-        </section>
-
-        <section id="metodo" class="method-section">
-            <div class="container">
-                <h2 class="section-title">Como funciona o nosso <span class="highlight">método</span></h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4><span>01</span> Diagnóstico e Estratégia</h4>
-                            <p>Analisamos seu negócio, concorrentes e público-alvo para criar um plano de marketing personalizado e com metas claras.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4><span>02</span> Execução e Atração</h4>
-                            <p>Lançamos suas campanhas, otimizamos suas redes sociais e criamos conteúdo de valor para atrair as pessoas certas.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4><span>03</span> Conversão e Vendas</h4>
-                            <p>Direcionamos os leads qualificados para o seu WhatsApp ou site, prontos para comprar, com um processo otimizado.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4><span>04</span> Análise e Otimização</h4>
-                            <p>Monitoramos os resultados em tempo real e fazemos ajustes constantes para garantir o melhor retorno sobre seu investimento.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         <section id="resultados" class="results-section">
-            <div class="container">
-                <h2 class="section-title">Nossos <span class="highlight">resultados</span> falam por si</h2>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <p class="result-number">95%</p>
-                        <p class="result-label">de Clientes Satisfeitos</p>
-                    </div>
-                     <div class="result-card highlight-card">
-                        <p class="result-number">Até 200%</p>
-                        <p class="result-label">de Aumento no Faturamento</p>
-                    </div>
-                     <div class="result-card">
-                        <p class="result-number">15 dias</p>
-                        <p class="result-label">para os Primeiros Resultados</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonial-section">
-            <div class="container">
-                <div class="testimonial-content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <blockquote>"A Magestà Digital mudou o jogo para nós. Em 3 meses, nosso faturamento dobrou. Antes, a gente dependia de indicação. Hoje, o WhatsApp não para de tocar com clientes que vêm do Instagram."</blockquote>
-                    <cite>
-                        <span class="cite-name">João D., Empresário</span>
-                        <span class="cite-location">Palmas, TO</span>
-                    </cite>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Pronto para transformar seu negócio?</h2>
-                    <p>Não perca mais tempo e clientes. Solicite uma proposta personalizada e sem compromisso.</p>
-                    <a href="https://wa.me/5563992215782?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+uma+proposta+personalizada." target="_blank" class="btn btn-primary btn-lg">Solicitar Proposta Gratuita</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="#"><img src="logo.svg" alt="Logo Magesta Digital" class="footer-logo"></a>
-                    <p>Marketing digital focado em crescimento. Captamos clientes para que você possa focar no seu negócio.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navegação</h4>
-                    <ul>
-                        <li><a href="#problema">O Problema</a></li>
-                        <li><a href="#solucao">A Solução</a></li>
-                        <li><a href="#metodo">Nosso Método</a></li>
-                        <li><a href="#resultados">Resultados</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <a href="https://wa.me/5563992215782" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/magestadigital" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Magesta Digital. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5563992215782" target="_blank" class="whatsapp-flutuante" aria-label="Fale Conosco pelo WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="js/script.js"></script>
+  <body class="bg-slate-950 text-white antialiased selection:bg-brand-purple selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
