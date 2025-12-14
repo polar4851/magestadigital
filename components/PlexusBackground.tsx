@@ -14,10 +14,10 @@ const PlexusBackground: React.FC = () => {
 
     const isMobile = width < 768;
     
-    // ULTRA PERFORMANCE MODE:
-    // 12 particles on mobile is enough to give the "vibe" without lag.
-    const particleCount = isMobile ? 12 : 35; 
-    const connectionDistance = isMobile ? 80 : 120;
+    // ULTRA PERFORMANCE MODE ADJUSTED:
+    // Increased particle count and connection distance for a denser look
+    const particleCount = isMobile ? 25 : 70; 
+    const connectionDistance = isMobile ? 110 : 180;
 
     const particles: Particle[] = [];
 
